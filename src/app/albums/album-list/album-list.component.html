@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row pad-left-right">
+        <span class="pull-left title">Albums</span>
+        <a class="btn btn-success pull-right" routerLink="new">Add Album</a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="left-panel">
+        <app-album-item
+        *ngFor="let album of albums"
+        [album]="album">
+        </app-album-item>
+      </div>
+    </div>
+</div>

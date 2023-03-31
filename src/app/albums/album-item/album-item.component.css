@@ -1,0 +1,14 @@
+.albumDiv {
+    width: 11rem;
+    height: 11rem;
+    margin: 2px;
+    font-size: 1.5rem;
+    border: solid thin darkgrey;
+    float: left;
+    padding: .2rem
+  }
+img { 
+  max-width: 100%;
+  max-height: 100%;
+}
+  

@@ -1,0 +1,71 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+  
+      <form id="album-edit" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="name">Album Title:</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              size="120"
+              max="120"
+              name="name"
+              #name="ngModel"
+              [ngModel]="originalAlbum?.name" required>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="url"> Spotify Link:</label>
+            <input
+              type="text"
+              id="url"
+              class="form-control"
+              size="150"
+              max="255"
+              name="url"
+              #url="ngModel"
+              [ngModel]="originalAlbum?.url" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="imagePath"> Album Cover:</label>
+            <input
+              type="text"
+              id="imagePath"
+              class="form-control"
+              size="150"
+              max="255"
+              name="imagePath"
+              #imagePath="ngModel"
+              [ngModel]="originalAlbum?.imagePath">
+          </div>
+        </div>
+
+  
+        <div 
+        class="alert alert-danger" 
+        *ngIf="!name.valid || !url.valid">
+          Album Title and Spotify Link are required fields!
+        </div>
+  
+        <div class="row">
+          <div class="col-xs-12 btn-toolbar">
+            <button 
+            class="btn btn-success" 
+            type="submit" 
+            [disabled]="!f.valid"
+            >Save</button>
+            <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
